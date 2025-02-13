@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +54,6 @@
             position: relative;
         }
 
-        /* Estilos para las imágenes */
         .imagen {
             position: absolute;
             width: 150px;
@@ -73,7 +73,6 @@
     </style>
 </head>
 <body>
-    <!-- Imágenes decorativas -->
     <img src="NoEntrar/imagen1.jpeg" alt="Foto nuestra" class="imagen" id="imagen1">
     <img src="NoEntrar/imagen2.jpg" alt="Regalo para ti" class="imagen" id="imagen2">
     <img src="NoEntrar/imagen3.jpeg" alt="Doggo" class="imagen" id="imagen3">
@@ -91,11 +90,11 @@
 
     <script>
         let escala = 1;
-       
+
         function negar() {
             escala *= 1.2;
             document.getElementById('btnSi').style.transform = `scale(${escala})`;
-           
+
             if(escala > 5) {
                 document.getElementById('btnSi').style.fontSize = '3em';
                 document.getElementById('btnSi').style.position = 'fixed';
@@ -120,3 +119,4 @@
     </script>
 </body>
 </html>
+```
