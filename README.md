@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Quieres ser mi San Valentín?</title>
     <style>
         body {
@@ -14,33 +16,39 @@
             align-items: center;
             justify-content: center;
             font-family: 'Arial', sans-serif;
+            text-align: center;
             overflow: hidden;
             position: relative;
         }
 
         .container {
-            text-align: center;
             z-index: 1;
+            max-width: 90%;
         }
 
         h1 {
             color: white;
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .botones {
-            margin-top: 30px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
         }
 
         button {
-            padding: 15px 30px;
-            margin: 0 10px;
+            padding: 15px;
             font-size: 1.2em;
             border: none;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
         }
 
         #btnSi {
@@ -54,31 +62,48 @@
             position: relative;
         }
 
+        /* 📱 Ajustes para imágenes en móviles */
+        .imagenes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            max-width: 90%;
+        }
+
         .imagen {
-            position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 80px;
+            height: 80px;
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
         }
 
-        #imagen1 { top: 10px; left: 10px; }
-        #imagen2 { top: 10px; right: 10px; }
-        #imagen3 { bottom: 10px; left: 10px; }
-        #imagen4 { bottom: 10px; right: 10px; }
-        #imagen5 { left: 10px; top: 50%; transform: translateY(-50%); }
-        #imagen6 { right: 10px; top: 50%; transform: translateY(-50%); }
+        .imagen:hover {
+            transform: scale(1.1);
+        }
 
+        @media (min-width: 600px) {
+            .botones {
+                flex-direction: row;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <img src="NoEntrar/imagen1.jpeg" alt="Foto nuestra" class="imagen" id="imagen1">
-    <img src="NoEntrar/imagen2.jpg" alt="Regalo para ti" class="imagen" id="imagen2">
-    <img src="NoEntrar/imagen3.jpeg" alt="Doggo" class="imagen" id="imagen3">
-    <img src="NoEntrar/imagen4.jpeg" alt="Otra foto nuestra" class="imagen" id="imagen4">
-    <img src="NoEntrar/imagen5.jpg" alt="Flores para ti" class="imagen" id="imagen5">
-    <img src="NoEntrar/imagen6.jpeg" alt="Chocolates" class="imagen" id="imagen6">
+
+    <!-- 📸 Sección de imágenes decorativas -->
+    <div class="imagenes">
+        <img src="NoEntrar/imagen1.jpeg" alt="Foto nuestra" class="imagen">
+        <img src="NoEntrar/imagen2.jpg" alt="Regalo para ti" class="imagen">
+        <img src="NoEntrar/imagen3.jpeg" alt="Doggo" class="imagen">
+        <img src="NoEntrar/imagen4.jpeg" alt="Otra foto nuestra" class="imagen">
+        <img src="NoEntrar/imagen5.jpg" alt="Flores para ti" class="imagen">
+        <img src="NoEntrar/imagen6.jpeg" alt="Chocolates" class="imagen">
+    </div>
 
     <div class="container">
         <h1>¿Quieres ser mi San Valentín? 💖</h1>
@@ -95,7 +120,7 @@
             escala *= 1.2;
             document.getElementById('btnSi').style.transform = `scale(${escala})`;
 
-            if(escala > 5) {
+            if (escala > 5) {
                 document.getElementById('btnSi').style.fontSize = '3em';
                 document.getElementById('btnSi').style.position = 'fixed';
                 document.getElementById('btnSi').style.width = '100%';
@@ -113,9 +138,11 @@
         function moverBoton() {
             const btnNo = document.getElementById('btnNo');
             btnNo.style.position = 'absolute';
-            btnNo.style.left = Math.random() * (window.innerWidth - 200) + 'px';
-            btnNo.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+            btnNo.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            btnNo.style.top = Math.random() * (window.innerHeight - 50) + 'px';
         }
     </script>
+
 </body>
+
 </html>
